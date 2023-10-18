@@ -2,18 +2,18 @@ const URL = 'https://challenge3-92fe2-default-rtdb.firebaseio.com/';
 const publishButton = document.querySelector("#Enviar");
 
 
-const createPost = async(post) => {
+const registerNewUser = async(post) => {
     //codigo que se ejecute  por default
     const url = URL + '.json';
-     const create = await fetch(url , { 
+     const createUser = await fetch(url , { 
       method: 'POST', 
        headers: { 'Content-type': 'application/json:charset=UTF-8'}, 
       body: JSON.stringify(post),
-     });   if (create.status === 200){
+     });   if (createUser.status === 200){
       window.location.href = 'http://127.0.0.1:5500/';
     }
      
-     console.log(create)
+     console.log(createUser)
   };
 
  
@@ -69,5 +69,3 @@ publishButton.addEventListener("click", () => {
 
   
   });
-
-
