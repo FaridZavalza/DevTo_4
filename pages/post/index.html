@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <header class="header__nav bg-light position-sticky sticky-top">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm ">
+          <div class="container d-flex">
+            <!--Button Ofcanvas-->
+            <button
+              class="c-btn c-btn--icon-alone js-hamburger-trigger mx-2 d-md-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasExample"
+              aria-controls="offcanvasExample"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+            </button>
+  
+            <!--Logo button-->
+            <a class="site-logo">
+              <img
+                src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
+                alt=""
+              />
+            </a>
+  
+            <div
+            class="collapse navbar-collapse position-relative mb-0"
+            id="navbarSupportedContent"
+            >
+            <ul class="navbar-nav mb-2 mb-0 m-lg-2"></ul>
+            <form class="d-md-flex w-50" role="search">
+              <input
+                class="form-control me-2"
+                id = "searchInput"
+                type="search"
+                placeholder="Search..."
+                aria-label="Search"
+              />
+              <button
+                class="border-0 bg-body position-absolute end-50 bg-transparent mt-1"
+                id ="searchButton"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" class="crayons-icon c-btn__icon" focusable="false"><path d="m18.031 16.617 4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"></path></svg>
+              </button>
+            </form>
+            
+            <!--Create Post Button-->
+            
+            <a class="c-cta c-cta--branded mr-2 whitespace-nowrap js-policy-article-create" href="/new">
+                Create Post
+            </a>
+          </div>
+  
+          <!--Search Icon-->
+          <a class="search-logo d-block d-lg-none" href="">
+            <img src="../img/icons/lupa.svg" alt="" />
+          </a>
+  
+          <!--Notification bell-->
+          <a class="notifications-logo" href=""
+            ><img src="./img/icons/bell.svg" alt=""
+          /></a>
+  
+            <!--User Account Button-->
+            <button class="user__button" type="submit">
+              <span>
+                <img
+                  src="https://res.cloudinary.com/practicaldev/image/fetch/s--4zZ4vSLE--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1135735/1821abf9-98b8-4d79-a4f1-859ca0ef2a5f.png"
+                  alt=""
+                />
+              </span>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+       <!--Main Section Container-->
+    <div class="container">
+        <div class="row">
+            <!-- first aside  -->
+          <div id="sidebar-wrapper-left" class="first__aside f col-3 sidebar-wrapper sidebar-wrapper-left crayons-layout__sidebar-left crayons-layout__content">
+            <aside class="side-bar"  aria-label="Primary sidebar ">
+              <nav class="mb-4 " data-testid="main-nav" aria-label="DEV Community">
+                <ul class="navagation-links">
+                  <li class="c-links"><a href="" class=" span__side1 text-decoration-none sidebar-navigation-link c-link c-link--block c-link--icon-left"><span class="home-icon" ><img class="icons" src="./img/icons/home.svg" alt=""></span>Home</a></li>
+                  <li class="c-links"><a href="" class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/listing.svg" alt=""></span>Listing</a></li>
+                  <li class="c-links"><a href="" class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/podcasts.svg" alt=""></span>Podcasts</a></li>
+                  <li class="c-links"><a href="" class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/" alt=""></span>Videos</a></li>
+                  <li class="c-links"><a href="" class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/tags.svg" alt=""></span>Tags</a></li>
+                  <li class="c-links"><a href="" class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/faq.svg" alt=""></span>FAQ</a></li>
+                  <li class="c-links"><a href="" class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/foremShop.svg" alt=""></span>Forem shop</a></li>
+                  <li class="c-links"><a href="" class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/ÁdvertiseOnDEV.svg" alt=""></span>Advertise on DEV</a></li>
+                  <li class="c-links"><a href="" class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/" alt=""></span>About</a></li>
+                  <li class="c-links"><a href="" class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/contact.svg" alt=""></span>Contact</a></li>
+                  <li class="c-links"><a href="" class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/guides.svg" alt=""></span>Guides</a></li>
+                  <li class="c-links"><a href="" class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/softwareComparisons.svg" alt=""></span>Software comparisons</a></li>
+                </ul>
+              </nav>     
+            </aside>
+          </div>
+          <!--  first aside end -->
+          <main class="posts_container col-12 col-md-9 col-lg-6">
+            <header class="p-2 px-3 m:p-0 m:px-0 m:mb-2 mt-3">
+              <nav class="-mx-3 m:mx-0 s:flex items-center justify-between">
+                <ul class="d-flex list-unstyled">
+                  <li class="me-2">
+                    <a class="anchor--decoration fs-5 text-black fw-bold" data-text="Relevant" href="">Relevant</a>
+                  </li>
+                  <li class="me-2">
+                    <a class="anchor--decoration fs-5" href="">Latest</a>
+                  </li>
+                  <li class="me-2">
+                    <a class="anchor--decoration fs-5" href="">Top</a>
+                  </li>
+                </ul>
+              </nav>
+            </header>
+            <!-- Cards Main -->
+            <section id="list-posts">
+              <!-- <div class="card"> -->
+                <!-- <img
+                  src="https://res.cloudinary.com/practicaldev/image/fetch/s--KtT0qK2I--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/j6e0763icp0a80ilsw0q.png"
+                  class="card-img-top"
+                  alt="..."
+                /> -->
+                <!-- <div class="card-body"> -->
+                  <!-- Author -->
+                  <!-- <div class="card__top--content d-flex justify-content-between" style="width: 100%;"> -->
+                    <!-- <div class="card__top--photo-name d-flex ">
+                      <div class="card__comment--image">
+                        <a class="card__comment--image--final d-flex" href="/">
+                          <img
+                            src="https://res.cloudinary.com/practicaldev/image/fetch/s--bqhtZWBh--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/68266/a52576e7-3c2a-460e-944f-b8f5ba2af41c.jpg"
+                            alt="" />
+                        </a>
+                      </div>
+                      <div class="name__date--container d-flex flex-column">
+                        <a href="./index-post.html">Casper</a>
+                        <a href=""> Aug 3 (6days ago)</a>
+                      </div>
+                    </div> -->
+                    <!-- Buttons -->
+                    <!-- <div class="gap-2">
+                      <button class="btn btn-info btn-sm mr-1" type="button">
+                        Editar
+                      </button>
+                      <button class="btn btn-danger btn-sm ml-1" type="button">
+                        Eliminar
+                      </button>
+                    </div> -->
+                  <!-- </div> -->
+                  <!-- <div class="row container"> -->
+                    <!-- Title -->
+                    <!-- <h5 class="card-title">
+                      Creating a Sinatra API with system-wide dependency injection
+                      using dry-system and rom-rb
+                    </h5> -->
+                    <!-- Description -->
+                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                    <!-- Tags -->
+                    <!-- <ul class="card__tags d-flex flex-wrap list-unstyled">
+                      <li class="card__tag me-2">#ruby</li>
+                      <li class="card__tag me-2">#programming</li>
+                      <li class="card__tag me-2">#architecture</li>
+                      <li class="card__tag me-2">#sinatra</li>
+                      <li class="card__tag me-2">#bootstrap</li>
+                    </ul> -->
+                     <!-- Interactions -->
+                    <!-- <div class="multiple__reactions__number">
+                      <a class="main__reaction--container" href="">
+                        <span class="multiple__reactions--container">
+                          <span class="reaction--item">
+                            <img
+                              src="https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg"
+                              alt="" /></span
+                          ><span class="reaction--item">
+                            <img
+                              src="https://dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg"
+                              alt="" /></span
+                          ><span class="reaction--item"
+                            ><img
+                              src="https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg"
+                              alt="" /></span
+                          ><span class="reaction--item"
+                            ><img
+                              src="https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg"
+                              alt="" /></span
+                          ><span class="reaction--item"
+                            ><img
+                              src="https://dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg"
+                              alt=""
+                          /></span>
+                        </span>
+                        <span class="reactions--number-final">123</span>
+                      </a>
+                      <a class="comments__number--cards d-flex align-items-center">
+                        <img class="comments__number_icon" src="./img/icons/messaje.svg" alt="" />
+                        <span class="comments__number--card">14</span>
+                      </a>
+                      <div class="last__minute__reaction d-flex">
+                        <p class="minute-read-font">1min read</p>
+                        <span class="button-reaction-menu">
+                        <img src="./img/icons/iconReaction.svg" alt="">
+                        </span>
+                      </div>
+                    </div> -->
+                  <!-- </div> -->
+                  <!-- Comments -->
+                  <!-- <div class="card__comments--container">
+                    <div class="card__comment--item d-flex">
+                      <div class="card__comment--image">
+                        <a href="">
+                          <img
+                            src="https://res.cloudinary.com/practicaldev/image/fetch/s--NlfbOS9M--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/976635/cbd32d54-eb39-4cbe-81f7-000df3554a8c.jpeg"
+                            alt="" 
+                          />     
+                        </a>
+                      </div>
+                      <div class="card__comment--body">
+                        <div class="card__comment--body--name--date">
+                          <p>Ben Halpern Aug 2</p>
+                        </div>
+                        <div class="card__comment--body--content">
+                          <p>
+                            I completely agree that you don't want a single mentor.
+                            The idea of having lots of people in your corner that
+                            you can talk to and get diverse opinions.
+                          </p>
+                          <p>
+                            The self direction and continuous learning component
+                            here is important too. Thanks!
+                          </p>
+                          <p>Kudos.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="number__of__coments d-flex justify-content-center">
+                      <p class="see--comments--button">See all 18 comments</p>
+                    </div>
+                  </div> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            </section>
+          </main>
+                  <!-- Aside2 --> <!--DIV ASIDE2 COMPLETE CONTAINER   -->
+                  <div class="aside2__container1 d-none col-lg-3 d-lg-block ">
+                    <aside class="aside__inside_containers rounded-1 mt-3 bg-white">
+                      <header class="aside2__header d-flex justify-content-between pt-2 px-2">
+                        <h3 class="aside2__h3">Listings</h3>
+                        <div class="aside2__action pt-1.75">
+                          <a
+                            href="/listings"
+                            class="aside2__see-all text-decoration-none fw-medium d-st fs-s"
+                            >See all</a
+                          >
+                        </div>
+                      </header>
+                      <a class="aside2__container-1 text-decoration-none py-2 px-2 d-flex flex-wrap border-top border-secondary" href="">
+                        <div>🚀 Maximizing your IT system's potential: how to identify and resolve host performance and configuration issues</div>
+                        <div class="aside2_secondary-1">education</div>
+                      </a>
+                    </aside>                                
+        </div>
+      </div>
+      <!--Offcanvas-->
+      <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h2 class="offcanvas-title" id="offcanvasExampleLabel">
+          DEV Community
+        </h2>
+        <!--Button Closing-->
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body ">
+        <nav class="mb-4 ms-3" >
+          <ul class="actions">
+            <li class="c-links"><a class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="http://www.w3.org/200/svg" alt=""></span>Home</a></li>
+            <li class="c-links"><a class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/listing.svg" alt=""></span>Listing</a></li>
+            <li class="c-links"><a class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/podcasts.svg" alt=""></span>Podcasts</a></li>
+            <li class="c-links"><a class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/" alt=""></span>Videos</a></li>
+            <li class="c-links"><a class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/tags.svg" alt=""></span>Tags</a></li>
+            <li class="c-links"><a class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/faq.svg" alt=""></span>FAQ</a></li>
+            <li class="c-links"><a class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/foremShop.svg" alt=""></span>Forem shop</a></li>
+            <li class="c-links"><a class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/ÁdvertiseOnDEV.svg" alt=""></span>Advertise on DEV</a></li>
+            <li class="c-links"><a class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/" alt=""></span>About</a></li>
+            <li class="c-links"><a class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/contact.svg" alt=""></span>Contact</a></li>
+            <li class="c-links"><a class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/guides.svg" alt=""></span>Guides</a></li>
+            <li class="c-links"><a class="span__side1 text-decoration-none"><span class="home-icon" ><img class="icons" src="./img/icons/softwareComparisons.svg" alt=""></span>Software comparisons</a></li>
+          </ul>
+        </nav>
+        <nav class="other ms-3 mb-4">
+          <h2>Other</h2>
+          <ul class="other-nav__links">
+          <li><a class="span__side1 text-decoration-none"><span><img src="./img/icons/CodeOfConduct.svg" alt=""></span>Code of Conduct</a></li>
+          <li><a class="span__side1 text-decoration-none"><span><img src="./img/icons/privacyPolicy.svg" alt=""></span>Privacy Policy</a></li>
+          <li><a class="span__side1 text-decoration-none"><span><img src="./img/icons/termsOfUse.svg" alt=""></span>Terms of use</a></li>
+        </ul>
+        </nav>
+        <div class="social-media-icons d-flex justify-content-start align-items-end mt-2 ms-3">
+          <a href="./twt.svg"><span><img src="./img/icons/twitter.svg" alt=""></span></a>
+          <a href="./twt.svg"><span><img src="./img/icons/facebook.svg" alt=""></span></a>
+          <a href="./twt.svg"><span><img src="./img/icons/github.svg" alt=""></span></a>
+          <a href="./twt.svg"><span><img src="./img/icons/instagram.svg" alt=""></span></a>
+          <a href="./twt.svg"><span><img src="./img/icons/twitch.svg" alt=""></span></a>
+          <a href="./twt.svg"><span><img src="./img/icons/mastodon.svg" alt=""></span></a>
+        </div>
+      </div>
+    </div>
+   
+      <!--Offcanvas end-->
+      <!-- BOOTSTRAP -->
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"
+      ></script>
+      <!-- Scripts -->
+      <script src="./js/script.js"></script>
+
+</body>
+</html>
