@@ -1,0 +1,76 @@
+.main_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    color: blue ;
+    font-size: xx-small;
+}
+
+.dev_icon{
+    width: 33px;
+}
+.second_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    font-size: large;
+}
+
+.devMembers_paragraph{
+    font-size: xx-small;
+}
+
+.inputs_labels{
+    font-size: xx-small;
+}
+
+.inputs_box {
+    width: 263px;
+}
+
+.features_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#checkbox:checked{
+    accent-color: blue;
+}
+
+.checkbox{
+    font-size: xx-small;
+}
+
+
+
+.logIn_button{
+    width: 270px;
+    font-size:xx-small;
+    height: 24px;
+    background-color: blue;
+    color: white;
+    border-radius: 3px;
+    border: none;
+}
+
+.privacyAnd_policy{
+    font-size: xx-small;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.privacyAnd_policy {
+    font-size: xx-small;
+}
+
+hr{
+    border: px solid gray;
+    width: 18rem;
+}

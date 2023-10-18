@@ -1,43 +1,38 @@
 const URL = 'https://challenge3-92fe2-default-rtdb.firebaseio.com/'; 
-const publishButton = document.querySelector("#Enviar");
+const publishButton = document.querySelector("#createAccount");
 
 
-const createPost = async(post) => {
+const registerNewUser = async(post) => {
     //codigo que se ejecute  por default
     const url = URL + '.json';
-     const create = await fetch(url , { 
+     const createUser = await fetch(url , { 
       method: 'POST', 
        headers: { 'Content-type': 'application/json:charset=UTF-8'}, 
       body: JSON.stringify(post),
-     });   if (create.status === 200){
+     });   if (createUser.status === 200){
       window.location.href = 'http://127.0.0.1:5500/';
     }
-     
-     console.log(create)
+    
+     console.log(createUser)
   };
 
- 
+  
 
 
 publishButton.addEventListener("click", () => {
-    const coverIMG = document.querySelector("#NewPostImage");
-    const newPostTitle = document.querySelector("#newPostTitle");
-    const hashTag = document.querySelector("#hashTags")
-    const postContent = document.querySelector("#postcontent")
+    const name = document.querySelector("#userName");
+    const lastName = document.querySelector("#userLastName");
+    const email = document.querySelector("#accountEmail");
+    const password = document.querySelector("#accountPassword");
+    const profileIMG = document.querySelector("#accountProfile");   
     
-    
-   
-
-  let arraynew = ['#' + hashTag.value];
-
-
 // Array to be inserted
 
 
 // Push an array to object
 
 
-    const posts = 
+    const createAccount = 
       {
         title: newPostTitle.value,
         img_url: coverIMG.value,
@@ -69,5 +64,3 @@ publishButton.addEventListener("click", () => {
 
   
   });
-
-
