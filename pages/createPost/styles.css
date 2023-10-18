@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif, system-ui;
+}
+
+.main_nav{
+    display: flex;
+    position: relative;
+    bottom: 4px;
+}
+
+.body_container{
+    background-color: #f5f5f5;
+  }
+.nav_menu{
+    height: 2.5rem;
+}
+
+.first_box{
+    padding: 10px;
+    height: 5.3rem;
+    font-size: 10px;
+}
+
+
+.pcreate{
+    position: absolute;
+    left: 3rem;
+    height: 10px;
+    font-size: x-small;
+}
+
+.edit_button {
+    text-decoration: none;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 10px;
+    color: black;
+    border-radius: 2px;
+}
+
+.edit_button:hover {
+    background-color: #4e57ef4f;
+}
+
+
+.preview_button{
+    text-decoration: none;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 10px;
+    color: rgb(77, 77, 77);
+    border-radius: 2px;
+}
+
+.preview_button:hover {
+    background-color: #4e57ef4f;
+}
+
+.main_container{
+    height: 15rem;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.newPost_input{
+    font-size: x-large;
+    font-weight: 700;
+    color: black;
+    border: none;
+}
+
+.hash_tags{
+    border: none;
+}
+
+::placeholder{
+    color: #525252;
+    border: none;
+}
+
+
+.post_input_container{
+    min-width: 20rem;
+    border: 1px solid rgb(233 233 233);
+    
+}
+
+
+
+.details_input{
+    border: none;
+    height: 2rem;
+    width: 20rem;
+    font-size: x-small;
+    padding: 10px
+}
+.icons_box{
+    display: flex;
+    align-items: center;
+}
+
+.button_iconsBox{
+    background-color: #f5f5f5;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+
+.icon_buttons{
+    border: none;
+    background: none;
+    
+}
+
+
+.icon_dotsMenu{
+    border: none;
+    background: none;
+    position: relative;
+    left: 13.5rem;
+    
+
+}
+
+
+.second_box{
+    height: 10rem;
+}
+
+.iconsImg{
+    height: 13px;
+    width: 15px;
+    border-radius: 1px;
+}
+
+.iconsImg:hover{
+   background: #4e57ef4f;
+    
+}
+
+
+
+.site_logo{
+    width: 30px;
+    height: 25px;
+}
+
+.site-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.file_input{
+    display: none;
+
+}
+
+.file_label{
+    border-radius: 3px;
+    border: 1.2px solid rgb(195, 195, 195);
+    background: #fff;
+    padding: 3px;
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size: xx-small;
+    font-weight: 500;
+    color: #3D3D3D;
+
+}
+
+
+.publish_button{
+    border-radius: 2px;
+    border: none;
+    background-color: #3b49df;
+    width: 51px;
+    height: 25px;
+    font-size: xx-small;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+.save_draft{
+    background: none;
+    border: none;
+    font-size: 10px;
+    color: rgb(77, 77, 77);
+    border-radius: 2px;
+};
+
+.save_draft:hover{
+    background-color: #4e57ef4f;
+};
+
+
+.icons{
+    background: none;
+    border: none;
+    color: rgb(77, 77, 77);
+}
+
+
+
+.settingsImg{
+    height: 12px;
+    width: 12px;
+    border-radius: 2px;
+}
+
+.settingsImg:hover{
+    background: #4e57ef4f;
+     
+ }
+
+.revert_button{
+    background: none;
+    border: none;
+    font-size: 10px;
+    color: rgb(77, 77, 77);
+    border-radius: 2px;
+}
+
+.revert_button:hover{
+    background: #4e57ef4f;
+}
+
+.mr-2{
+    margin-left: 10px;
+}
+
+
