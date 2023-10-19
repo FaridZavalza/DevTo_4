@@ -82,14 +82,16 @@ const renderPost = (dataPost) => {
   const listTags = document.createElement("ul");
   listTags.className = "card__tags d-flex flex-wrap list-unstyled";
   renderListTags(dataPost.tags, listTags);
+
   // elment description
   const cardDescription = document.createElement("p");
   cardDescription.className = "card-text";
   cardDescription.textContent = dataPost.description;
+
   // element title
   const cardTitle = document.createElement("h5");
   cardTitle.className = "card-title";
-  cardTitle.style = "font-size:28px; font-weight: 800";
+  cardTitle.style = "font-size:28px; font-weight: 800; ho ";
   cardTitle.textContent = dataPost.title;
 
   const rowContainer = document.createElement("div");
@@ -136,6 +138,13 @@ const renderPost = (dataPost) => {
   btnEditar.textContent = "Editar";
   btnEliminar.dataset.post = dataPost.id;
   btnEditar.dataset.post = dataPost.id;
+
+  // Event title button
+    cardTitle.addEventListener("click", (event) => {
+    const idPost = event.target.dataset.post;
+    window.location.href = "http://127.0.0.1:3000/pages/post/?id=" + idPost;
+  });
+
   // Event button edit
   btnEditar.addEventListener("click", (event) => {
     const idPost = event.target.dataset.post;
