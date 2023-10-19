@@ -184,6 +184,9 @@ const renderPost = (dataPost, index) => {
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
 
+  if(index === 0) card.appendChild(imgPost)
+  card.appendChild(cardBody)
+
   cardBody.appendChild(cardAuthor);
   cardBody.appendChild(rowContainer);
 
@@ -204,8 +207,8 @@ const renderPost = (dataPost, index) => {
 };
 
 const renderListPost = (listPosts) => {
-  listPosts.forEach((post) => {
-    renderPost(post);
+  listPosts.forEach((post, index) => {
+    renderPost(post, index);
   });
 };
 
