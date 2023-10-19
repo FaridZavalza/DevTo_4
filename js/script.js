@@ -1,8 +1,8 @@
 /* Variables */
 let allPost = [];
 let filteredPost = [];
-const URL_FIREBASE =
-  "https://challenge3-92fe2-default-rtdb.firebaseio.com/.json";
+const URL_API = "http://127.0.0.1:5500"
+const URL_WEB = window.location.href
 
 /* Elements DOM */
 const searchButton = document.querySelector("#searchButton");
@@ -29,7 +29,7 @@ const renderListTags = (listTags, tag) => {
   });
 };
 
-const renderPost = (dataPost) => {
+const renderPost = (dataPost, index) => {
   // elements interactions
   const reactionItem = document.createElement("li");
   reactionItem.className = "reaction--item";
@@ -93,6 +93,7 @@ const renderPost = (dataPost) => {
   cardTitle.className = "card-title";
   cardTitle.style = "font-size:28px; font-weight: 800; ho ";
   cardTitle.textContent = dataPost.title;
+  cardTitle.dataset.post = dataPost._id
 
   const rowContainer = document.createElement("div");
   rowContainer.className = "row container";
@@ -104,7 +105,7 @@ const renderPost = (dataPost) => {
   // elements author
   const imgAuthor = document.createElement("img");
   imgAuthor.src = dataPost.author.avatar;
-  imgAuthor.alt = dataPost.author.name;
+  imgAuthor.alt = dataPost.author.first_name;
 
   const anchorCommentImage = document.createElement("a");
   anchorCommentImage.className = "card__comment--image--final d-flex";
@@ -115,9 +116,20 @@ const renderPost = (dataPost) => {
   authorImage.appendChild(anchorCommentImage);
 
   const anchorAuthorName = document.createElement("a");
-  anchorAuthorName.textContent = dataPost.author.name;
+  anchorAuthorName.textContent = dataPost.author.first_name;
   const anchorAuthorDate = document.createElement("a");
   anchorAuthorDate.textContent = dataPost.date_post;
+
+  /** Format Date**/
+  const date = new Date(dataPost.date_post);
+  const month =
+    date.toLocaleString("default", { month: "short" }).charAt(0).toUpperCase() +
+    date.toLocaleString("default", { month: "short" }).slice(1);
+  const day = date.getDate();
+ 
+  const formattedDate = `${month} ${day}`;
+ 
+  anchorAuthorDate.textContent = formattedDate;
 
   const authorNameDate = document.createElement("div");
   authorNameDate.className = "name__date--container d-flex flex-column";
@@ -136,8 +148,8 @@ const renderPost = (dataPost) => {
   btnEditar.className = "btn btn-info btn-sm m-1";
   btnEliminar.textContent = "Eliminar";
   btnEditar.textContent = "Editar";
-  btnEliminar.dataset.post = dataPost.id;
-  btnEditar.dataset.post = dataPost.id;
+  btnEliminar.dataset.post = dataPost._id;
+  btnEditar.dataset.post = dataPost._id;
 
   // Event title button
     cardTitle.addEventListener("click", (event) => {
@@ -148,7 +160,7 @@ const renderPost = (dataPost) => {
   // Event button edit
   btnEditar.addEventListener("click", (event) => {
     const idPost = event.target.dataset.post;
-    window.location.href = "http://127.0.0.1:5500/pages/Edit/?id=" + idPost;
+    window.location.href = `${URL_WEB}pages/Edit/?id=${idPost}`
   });
   // Event button delete
  btnEliminar.addEventListener("click", (event) => {
@@ -210,7 +222,7 @@ const parserResponsePostFireBase = (object) => {
       date_post: object[key].date_post,
       author: {
         avatar: object[key].author.avatar,
-        name: object[key].author.name,
+        first_name: object[key].author.first_name,
       },
       category: object[key].category,
       tags: object[key].tags,
@@ -294,5 +306,3 @@ const eliminarPostApi = async (id) => {
 
 
 getPostsApi();
-
-
