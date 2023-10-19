@@ -212,32 +212,32 @@ const renderListPost = (listPosts) => {
   });
 };
 
-const parserResponsePostFireBase = (object) => {
-  const listPostParsed = [];
+// const parserResponsePostFireBase = (object) => {
+//   const listPostParsed = [];
 
-  for (const key in object) {
-    const obectParsed = {
-      id: key,
-      title: object[key].title,
-      img_url: object[key].img_url,
-      description: object[key].description,
-      content: object[key].content,
-      date_post: object[key].date_post,
-      author: {
-        avatar: object[key].author.avatar,
-        first_name: object[key].author.first_name,
-      },
-      category: object[key].category,
-      tags: object[key].tags,
-      reactions: object[key].reactions,
-      time_read: object[key].time_read,
-      comments: [...object[key].comments],
-    };
-    listPostParsed.push(obectParsed);
-  }
-  allPost = listPostParsed;
-  return listPostParsed;
-};
+//   for (const key in object) {
+//     const obectParsed = {
+//       id: key,
+//       title: object[key].title,
+//       img_url: object[key].img_url,
+//       description: object[key].description,
+//       content: object[key].content,
+//       date_post: object[key].date_post,
+//       author: {
+//         avatar: object[key].author.avatar,
+//         first_name: object[key].author.first_name,
+//       },
+//       category: object[key].category,
+//       tags: object[key].tags,
+//       reactions: object[key].reactions,
+//       time_read: object[key].time_read,
+//       comments: [...object[key].comments],
+//     };
+//     listPostParsed.push(obectParsed);
+//   }
+//   allPost = listPostParsed;
+//   return listPostParsed;
+// };
 
 /* Events */
 //Search Button
@@ -271,35 +271,35 @@ renderListPost(filteredPost);
 //Create Post Button
 createPostButton.addEventListener("click", (event) => {
   event.preventDefault();
-  window.location.href = "http://127.0.0.1:5500/pages/createPost";
+  window.location.href = `${URL_WEB}pages/createPost`;
 });
 
 //Filter Posts
 // var filteredPosts = listPostParsed.filter(function (posts) {});
 
 /* Methods API */
-const getPostsApi = async () => {
+const getPostsByIdApi = async () => {
   try {
-    const response = await fetch(URL_FIREBASE, {
+    const response = await fetch(`${URL_API}/posts/${ID_POST}`, {
       method: "GET",
     });
-    const parsed = await response.json();
-    const results = parserResponsePostFireBase(parsed);
-    cleanList();
-    renderListPost(results.reverse());
+    const parsed = await response.json()
+    const results = parsed.data
+    // cleanList();
+    renderListPost(results)
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
-};
+}
 
 const eliminarPostApi = async (id) => { 
-  const URL_FIREBASE_BY_POST = "https://challenge3-92fe2-default-rtdb.firebaseio.com/" + id + ".json";
+  const URL_FIREBASE_BY_POST = "https://challenge3-92fe2-default-rtdb.firebaseio.com/" + id + ".json"
   try{ 
     const response = await fetch(URL_FIREBASE_BY_POST,{
       method: "DELETE",
     });
     if (response.status === 200){
-      getPostsApi();
+      getPostsByIdApi();
     }
 
   }catch (error){
@@ -308,4 +308,4 @@ const eliminarPostApi = async (id) => {
 }
 
 
-getPostsApi();
+getPostsByIdApi();
